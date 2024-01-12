@@ -74,8 +74,8 @@ for i_plot, i_snap in enumerate([10,11,12,21,22,24]):
     pos3 = np.array( data['PartType3']['Coordinates'], dtype=np.float64 )
     pos4 = np.array( data['PartType4']['Coordinates'], dtype=np.float64 )
     
-    ix = np.int(i_plot % 3)
-    iy = np.int(i_plot / 3)
+    ix = np.int32(i_plot % 3)
+    iy = np.int32(i_plot / 3)
     
     if makeplots:
         ax[iy,ix].scatter(pos2[:, 0], pos2[:, 1], marker='.', c='k', s=0.05, alpha=0.5, rasterized=True, zorder=2)

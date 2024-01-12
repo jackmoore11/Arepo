@@ -91,7 +91,7 @@ for i_file, z in enumerate(Redshifts):
         ax = plt.axes([0.1,0.1,0.87,0.87])
         
         if(pos.shape[0] > 32**3):
-            i_select = np.random.uniform(low=0.0, high=pos.shape[0], size=32**3).astype(np.int)
+            i_select = np.random.uniform(low=0.0, high=pos.shape[0], size=32**3).astype(np.int32)
         else:
             i_select = np.arange(pos.shape[0])
         ax.scatter(pos[i_select, 0], pos[i_select, 1], marker='.', s=0.05, alpha=0.5, rasterized=True)

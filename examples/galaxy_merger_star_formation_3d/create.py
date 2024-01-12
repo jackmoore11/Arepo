@@ -22,7 +22,7 @@ print("create.py " + simulation_directory)
 
 """ set output times """
 outputTimes = np.linspace(0.0,3.0,32, dtype=np.float64)
-ones = np.ones(outputTimes.shape, dtype=np.int)
+ones = np.ones(outputTimes.shape, dtype=np.int32)
 
 
 """ write output list file """
@@ -46,13 +46,13 @@ res = call(["make", "CONFIG="+simulation_directory+"/Config_ADDBACKGROUNDGRID.sh
              "BUILD_DIR="+simulation_directory+"/build_ADDBACKGROUNDGRID", \
             "EXEC="+simulation_directory+"/Arepo_ADDBACKGRUNDGRID"])
 if res != 0:
-    sys.exit( np.int(res) )
+    sys.exit( np.int32(res) )
     
 ## execute Arepo with ADDBACKGROUNDGRID from run directory
 os.chdir(simulation_directory)
 res = call(["mpiexec", "-np", "1","./Arepo_ADDBACKGRUNDGRID", "./param_ADDBACKGROUNDGRID.txt"])
 if res != 0:
-    sys.exit( np.int(res) )
+    sys.exit( np.int32(res) )
 os.chdir(cwd)
 
 

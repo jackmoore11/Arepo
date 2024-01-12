@@ -55,7 +55,7 @@ else:
 
 """ set output times """
 outputTimes = np.linspace(0.0,1.0,10, dtype=np.float64)
-ones = np.ones(outputTimes.shape, dtype=np.int)
+ones = np.ones(outputTimes.shape, dtype=np.int32)
 
 
 """ write output list file """

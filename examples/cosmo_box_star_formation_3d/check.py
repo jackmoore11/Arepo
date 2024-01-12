@@ -84,15 +84,15 @@ if makeplots:
         posstars = np.array(data["PartType4"]["Coordinates"], dtype = FloatType) / HubbleParam / 1000.
     
         if(pos.shape[0] > 32**3):
-            i_select = np.random.uniform(low=0.0, high=pos.shape[0], size=32**3).astype(np.int)
+            i_select = np.random.uniform(low=0.0, high=pos.shape[0], size=32**3).astype(np.int32)
         else:
             i_select = np.arange(pos.shape[0])
         ## Try to show the different gas phases and their spatial distribution
         z = 1./ a - 1
         if i == 0:
             continue
-        ax_col = np.int((i-1)%2)
-        ax_row = np.int((i-1)/2)
+        ax_col = np.int32((i-1)%2)
+        ax_row = np.int32((i-1)/2)
         print('col %d, row %d'%(ax_col, ax_row))
         print(ax[ax_col][ax_row])
         ax[ax_row][ax_col].text(5.5,10.0,'redshift %.1f'%z)
@@ -140,15 +140,15 @@ if makeplots:
         Density = np.array(data["PartType0"]["Density"], dtype = FloatType)
     
         if(pos.shape[0] > 32**3):
-            i_select = np.random.uniform(low=0.0, high=pos.shape[0], size=32**3).astype(np.int)
+            i_select = np.random.uniform(low=0.0, high=pos.shape[0], size=32**3).astype(np.int32)
         else:
             i_select = np.arange(pos.shape[0])
         ## Try to show the different gas phases and their spatial distribution
         z = 1./ a - 1
         if i == 0:
             continue
-        ax_col = np.int((i-1)%2)
-        ax_row = np.int((i-1)/2)
+        ax_col = np.int32((i-1)%2)
+        ax_row = np.int32((i-1)/2)
 
         Nplot = 512
         from scipy import spatial # needed for KDTree that we use for nearest neighbour search and Voronoi mesh
