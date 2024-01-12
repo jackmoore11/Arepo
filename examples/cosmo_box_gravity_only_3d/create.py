@@ -70,7 +70,7 @@ else:
 
 """ set output times z=1,0"""
 outputTimes = np.array([0.5, 1], dtype=np.float64)
-ones = np.ones(outputTimes.shape, dtype=np.int)
+ones = np.ones(outputTimes.shape, dtype=np.int32)
 
 
 """ write output list file """

@@ -33,7 +33,7 @@ print("create.py " + simulation_directory)
 
 """ output times """
 outputTimes = np.array([0.0197,0.2,0.25,0.33,0.5,0.66,1], dtype=np.float64)
-ones = np.ones(outputTimes.shape, dtype=np.int)
+ones = np.ones(outputTimes.shape, dtype=np.int32)
 data = np.array([outputTimes, ones]).T
 np.savetxt(simulation_directory+"/output_list.txt",data, fmt="%g %1.f" )
 
@@ -134,8 +134,8 @@ if runParent:
     print('Selected halo %d with position %g %g %g'%(i_halo, pos[0], pos[1], pos[2]))
                 
     # SELECTION OF PARTICLES IN HIGH-RES REGION
-    pid0 = np.array(sn0['PartType1']['ParticleIDs'], dtype=np.int64)
-    pid6 = np.array(sn6['PartType1']['ParticleIDs'], dtype=np.int64)
+    pid0 = np.array(sn0['PartType1']['ParticleIDs'], dtype=np.int32)
+    pid6 = np.array(sn6['PartType1']['ParticleIDs'], dtype=np.int32)
     ppos0 = np.array(sn0['PartType1']['Coordinates'], dtype=np.float64)
     ppos6 = np.array(sn6['PartType1']['Coordinates'], dtype=np.float64)
     

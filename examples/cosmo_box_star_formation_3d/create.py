@@ -64,7 +64,7 @@ else:
 
 """ set output times """
 outputTimes = np.array([0.2,0.25,0.33,0.5,0.66,1], dtype=np.float64)
-ones = np.ones(outputTimes.shape, dtype=np.int)
+ones = np.ones(outputTimes.shape, dtype=np.int32)
 
 """ copy treecool file to run directory """
 if len(sys.argv) > 2:
